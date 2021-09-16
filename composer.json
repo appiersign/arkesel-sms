@@ -1,0 +1,21 @@
+{
+    "name": "appiersign/arkesel-sms",
+    "description": "Php implementation of the Arkesel SMS API",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Appiersign\\ArkeselSms\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Solomon APPIER-SIGN",
+            "email": "braasig@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
