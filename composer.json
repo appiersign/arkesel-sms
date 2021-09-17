@@ -3,6 +3,7 @@
     "description": "Php implementation of the Arkesel SMS API",
     "type": "library",
     "require": {
+        "php": "^7.4",
         "guzzlehttp/guzzle": "^7.3"
     },
     "license": "MIT",
