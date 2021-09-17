@@ -6,30 +6,29 @@ use GuzzleHttp\Client;
 
 class ArkeselSms
 {
-    const URL = '';
-    private string $message;
-    private array $recipients;
+    const URL = 'https://sms.arkesel.com/api/v2/sms/send';
     private string $apiKey;
-    private string $senderId;
 
-    public function __construct(array $recipients, string $message)
+    public function __construct(string $apiKey)
     {
-        $this->recipients = $recipients;
-        $this->message = $message;
-        $this->senderId = getenv('ARKESEL_SMS_SENDER_ID');
-        $this->apiKey = getenv('ARKESEL_SMS_API_KEY');
+        $this->apiKey = $apiKey;
     }
 
-    public function send()
+    public function send(string $sender, array $recipients, string $message)
     {
-        return $this->apiKey;
         $request = new Client();
         $response = $request->post(self::URL, [
-            'body' => [
-
+            'headers' => [
+                'api-key' => $this->apiKey
+            ],
+            'form_params' => [
+                'sender' => $sender,
+                'recipients' => $recipients,
+                'message' => $message
             ]
         ]);
 
+        return (object)json_decode($response->getBody(), true);
 
     }
 }
