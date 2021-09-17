@@ -15,7 +15,7 @@ You can install the package via composer:
 composer require appiersign/arkesel-sms
 ```
 
-## Usage (Just Like)
+## Usage
 
 ```php
 $sms = new Appiersign\ArkeselSms\ArkeselSms('YOUR API KEY');
@@ -25,6 +25,9 @@ $response = $sms->send('YOUR SEND ID', ['LIST', 'OF', 'RECIPIENTS'], 'YOUR MESSA
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+## Authors
+- Solomon APPIER-SIGN [github](https://github.com/appiersign)
 
 ## Contributing
 
